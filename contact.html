@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Himalayan Coffee House</title>
+    <meta name="description" content="Get in touch with Himalayan Coffee House. Contact us for reservations, catering, or any questions about our authentic Nepali coffee experience.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">H</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-green-700">Himalayan Coffee House</h1>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-green-700 transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-green-700 transition-colors">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-green-700 transition-colors">About</a>
+                    <a href="location.html" class="text-gray-700 hover:text-green-700 transition-colors">Location</a>
+                    <a href="contact.html" class="text-green-700 font-semibold border-b-2 border-green-700">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="py-20 bg-gradient-to-b from-green-700 to-green-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl max-w-2xl mx-auto">We'd love to hear from you! Reach out for reservations, catering, or just to say hello</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8">Send us a Message</h2>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                       placeholder="+977-">
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject *</label>
+                                <select id="subject" name="subject" required 
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">Select a subject</option>
+                                    <option value="reservation">Table Reservation</option>
+                                    <option value="catering">Catering Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                          placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8">Get in Touch</h2>
+                        
+                        <div class="space-y-8">
+                            <!-- Contact Details -->
+                            <div class="bg-white rounded-lg shadow-lg p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Contact Information</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-green-600">📍</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Address</p>
+                                            <p class="text-gray-600">Thamel Marg, Kathmandu 44600, Nepal</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-green-600">📞</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Phone</p>
+                                            <p class="text-gray-600">+977-1-4441234</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-green-600">📱</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Mobile</p>
+                                            <p class="text-gray-600">+977-9841234567</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-green-600">📧</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Email</p>
+                                            <p class="text-gray-600">hello@himalayancoffeehouse.com.np</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Operating Hours -->
+                            <div class="bg-yellow-50 rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Operating Hours</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-700">Monday - Sunday</span>
+                                        <span class="font-medium text-gray-800">6:00 AM - 10:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-700">Peak Hours</span>
+                                        <span class="font-medium text-gray-800">7:00-9:00 AM, 2:00-5:00 PM</span>
+                                    </div>
+                                    <p class="text-sm text-green-600 mt-3">We're open all days including festivals!</p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="bg-green-50 rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Follow Us</h3>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                        f
+                                    </a>
+                                    <a href="#" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
+                                        📷
+                                    </a>
+                                    <a href="#" class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                                        🐦
+                                    </a>
+                                </div>
+                                <p class="text-gray-600 mt-3 text-sm">
+                                    Stay updated with our latest news, special offers, and behind-the-scenes content!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Services -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Special Services</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-yellow-600 text-2xl">🎉</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Private Events</h3>
+                            <p class="text-gray-600 mb-4">Host your special occasions in our cozy space with customized menus.</p>
+                            <a href="#" class="text-green-600 hover:text-green-700 font-semibold">Learn More</a>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-green-600 text-2xl">🍽️</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Catering Services</h3>
+                            <p class="text-gray-600 mb-4">Bring our authentic coffee and pastries to your office or event.</p>
+                            <a href="#" class="text-green-600 hover:text-green-700 font-semibold">Get Quote</a>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-blue-600 text-2xl">☕</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Coffee Classes</h3>
+                            <p class="text-gray-600 mb-4">Learn the art of brewing perfect Nepali coffee with our expert baristas.</p>
+                            <a href="#" class="text-green-600 hover:text-green-700 font-semibold">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Himalayan Coffee House</h3>
+                    <p class="text-gray-300">Authentic Nepali coffee experience in the heart of Kathmandu's Thamel district.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-yellow-400">Home</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-yellow-400">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-yellow-400">About Us</a></li>
+                        <li><a href="location.html" class="text-gray-300 hover:text-yellow-400">Location</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Visit Us</h4>
+                    <p class="text-gray-300">Thamel, Kathmandu<br>Open Daily: 6:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
