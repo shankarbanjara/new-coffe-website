@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Himalayan Coffee House</title>
+  <meta name="description" content="Review your order and checkout at Himalayan Coffee House.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation injected on all pages -->
+  <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-lg">H</span>
+          </div>
+          <h1 class="text-2xl font-bold text-green-700" data-i18n="hero.headline_2">Himalayan Coffee House</h1>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-green-700 transition-colors" data-i18n="nav.home">Home</a>
+          <a href="menu.html" class="text-gray-700 hover:text-green-700 transition-colors" data-i18n="nav.menu">Menu</a>
+          <a href="about.html" class="text-gray-700 hover:text-green-700 transition-colors" data-i18n="nav.about">About</a>
+          <a href="location.html" class="text-gray-700 hover:text-green-700 transition-colors" data-i18n="nav.location">Location</a>
+          <a href="contact.html" class="text-gray-700 hover:text-green-700 transition-colors" data-i18n="nav.contact">Contact</a>
+
+          <a href="cart.html" class="relative text-gray-700 hover:text-green-700 transition-colors flex items-center gap-1" aria-label="Cart">
+            <span aria-hidden="true">🛒</span>
+            <span data-i18n="nav.cart">Cart</span>
+            <span id="cart-count" class="badge">0</span>
+          </a>
+
+          <div class="flex items-center gap-2 pl-3 border-l">
+            <button type="button" data-lang="ja" title="日本語" class="text-xl">🇯🇵</button>
+            <button type="button" data-lang="en" title="English" class="text-xl">🇺🇸</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-16">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h1 class="text-4xl font-bold mb-8" data-i18n="cart.title">ショッピングカート</h1>
+
+      <div id="cart-empty" class="bg-white border rounded-lg p-8 text-center text-gray-600">
+        <p data-i18n="cart.empty">カートは空です。</p>
+        <a href="menu.html" class="inline-block mt-4 bg-green-600 text-white px-6 py-3 rounded-lg btn-hover-lift" data-i18n="cart.continue">買い物を続ける</a>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 overflow-x-auto">
+        <table class="min-w-full text-left">
+          <thead>
+            <tr class="border-b text-gray-500">
+              <th class="py-3" data-i18n="cart.item">商品名</th>
+              <th class="py-3" data-i18n="cart.price">価格</th>
+              <th class="py-3" data-i18n="cart.qty">数量</th>
+              <th class="py-3" data-i18n="cart.subtotal">小計</th>
+              <th class="py-3"></th>
+            </tr>
+          </thead>
+          <tbody id="cart-rows"></tbody>
+        </table>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+        <button class="px-5 py-3 border rounded-lg hover:bg-gray-50" onclick="clearCart()" data-i18n="cart.clear">カートを空にする</button>
+        <div class="text-2xl font-bold">
+          <span data-i18n="cart.total">合計</span>:
+          <span id="cart-total">रू 0</span>
+        </div>
+      </div>
+
+      <div class="mt-6 text-right">
+        <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg btn-hover-lift" onclick="alert('Online checkout coming soon!')"
+                data-i18n="cart.checkout">お会計へ</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <button id="checkout-btn">Checkout</button>
+
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+<div id="paypal-button-container"></div>
+<script>
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: { value: '10.00' } // calculate cart total dynamically
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Transaction completed by ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
+
+
+</body>
+</html>
