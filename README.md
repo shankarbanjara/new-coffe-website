@@ -2,25 +2,10 @@
 
 This is a static HTML/CSS website for **Himalayan Coffee House**, a Starbucks-inspired coffee shop located in Thamel, Kathmandu, Nepal.
 
-## 🚀 Getting Started with GitHub
+## 🚀 Getting Started with GitHub Shankara Banjara
 
-### Step 1: Create a GitHub Account
-1. Go to [GitHub.com](https://github.com)
-2. Click "Sign up" and create your account
-3. Verify your email address
 
-### Step 2: Create a New Repository
-1. Click the "+" icon in the top right corner
-2. Select "New repository"
-3. Name it: `himalayan-coffee-house`
-4. Add description: "Static website for Himalayan Coffee House - Authentic Nepali Coffee in Kathmandu"
-5. Make it Public
-6. Check "Add a README file"
-7. Click "Create repository"
-
-### Step 3: Upload Your Files
-1. In your repository, click "Add file" → "Upload files"
-2. Drag and drop all files from the `static-site` folder:
+### Step 1: Upload Your Files are here
    - `index.html`
    - `menu.html`
    - `about.html`
@@ -28,16 +13,8 @@ This is a static HTML/CSS website for **Himalayan Coffee House**, a Starbucks-in
    - `contact.html`
    - `styles.css`
    - `README.md`
-3. Add commit message: "Initial website upload"
-4. Click "Commit changes"
-
-### Step 4: Enable GitHub Pages
-1. Go to your repository's "Settings" tab
-2. Scroll down to "Pages" in the left sidebar
-3. Under "Source", select "Deploy from a branch"
-4. Choose "main" branch and "/ (root)" folder
-5. Click "Save"
-6. Your website will be available at: `https://yourusername.github.io/himalayan-coffee-house`
+ Add commit message: "Initial website upload"
+ Click "Commit changes"
 
 ## 📁 File Structure
 
@@ -102,30 +79,12 @@ static-site/
 
 ## 🌐 Publishing Options
 
-### Option 1: GitHub Pages (Free)
+### Option 1: GitHub Pages
 - Follow steps above
 - Custom domain available
 - SSL certificate included
 
-### Option 2: Netlify (Free)
-1. Go to [Netlify.com](https://netlify.com)
-2. Drag and drop your files
-3. Get instant live URL
 
-### Option 3: Vercel (Free)
-1. Go to [Vercel.com](https://vercel.com)
-2. Import from GitHub
-3. Auto-deploy on updates
-
-## 📧 Customization
-
-To customize for your own coffee shop:
-
-1. **Text Content**: Update company name, address, and descriptions
-2. **Colors**: Modify the color scheme in `styles.css`
-3. **Images**: Add your own coffee shop photos
-4. **Menu Items**: Update prices and descriptions in menu.html
-5. **Contact Info**: Change phone numbers and email addresses
 
 ## 📞 Support
 
@@ -144,4 +103,4 @@ Himalayan Coffee House brings authentic Nepali coffee culture to the heart of Ka
 
 ---
 
-**Made with ❤️ in Nepal**
+**Made with ❤️ in Nepal** 
