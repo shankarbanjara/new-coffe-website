@@ -103,7 +103,13 @@ function addToCart(item){
   if (idx > -1){
     cart[idx].qty += item.qty || 1;
   } else {
-    cart.push({id:item.id, name:item.name, price:item.price, qty:item.qty||1});
+    cart.push({
+      id: item.id, 
+      name: item.name, 
+      price: item.price, 
+      image: item.image, // Store image URL
+      qty: item.qty||1
+    });
   }
   saveCart(cart);
   showToast(`${item.name} をカートに追加しました`);
@@ -140,12 +146,13 @@ function wireAddToCartButtons(){
       const id = btn.getAttribute("data-id");
       const name = btn.getAttribute("data-name");
       const price = parseFloat(btn.getAttribute("data-price"));
-      addToCart({id, name, price, qty:1});
+      const image = btn.closest('.card-hover').querySelector('img')?.src || '';
+      addToCart({id, name, price, image, qty:1});
     });
   });
 }
 
-// Cart page render
+// Cart page render - UPDATED TO SHOW IMAGES
 function renderCart(){
   const container = document.querySelector("#cart-rows");
   if (!container) return;
@@ -153,12 +160,12 @@ function renderCart(){
 
   const emptyRow = document.querySelector("#cart-empty");
   if (cart.length === 0){
-    if (emptyRow) emptyRow.classList.remove("hidden");
+    if (emptyRow) emptyRow.style.display = 'block';
     container.innerHTML = "";
     document.querySelector("#cart-total").textContent = currency(0);
     return;
   } else {
-    if (emptyRow) emptyRow.classList.add("hidden");
+    if (emptyRow) emptyRow.style.display = 'none';
   }
 
   container.innerHTML = "";
@@ -169,17 +176,22 @@ function renderCart(){
     const row = document.createElement("tr");
     row.className = "border-b";
     row.innerHTML = `
-      <td class="py-3">${item.name}</td>
-      <td class="py-3">${currency(item.price)}</td>
-      <td class="py-3">
+      <td class="py-4">
+        <div class="flex items-center gap-3">
+          <img src="${item.image}" alt="${item.name}" class="cart-product-image">
+          <span>${item.name}</span>
+        </div>
+      </td>
+      <td class="py-4">${currency(item.price)}</td>
+      <td class="py-4">
         <div class="inline-flex items-center border rounded-lg overflow-hidden">
           <button class="px-3 py-1 hover:bg-gray-100" data-action="dec">-</button>
           <span class="px-4">${item.qty}</span>
           <button class="px-3 py-1 hover:bg-gray-100" data-action="inc">+</button>
         </div>
       </td>
-      <td class="py-3 font-semibold">${currency(sub)}</td>
-      <td class="py-3">
+      <td class="py-4 font-semibold">${currency(sub)}</td>
+      <td class="py-4">
         <button class="text-red-600 hover:underline" data-action="remove">Remove</button>
       </td>
     `;
@@ -214,6 +226,14 @@ function wireLangSwitcher(){
   });
 }
 
+// --------- Fixed Navigation ---------
+function makeNavFixed() {
+  const nav = document.querySelector('nav');
+  if (nav && !nav.classList.contains('fixed-nav')) {
+    nav.classList.add('fixed-nav');
+  }
+}
+
 // --------- On load ---------
 document.addEventListener("DOMContentLoaded", () => {
   // init lang
@@ -223,4 +243,32 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLangSwitcher();
   wireAddToCartButtons();
   renderCart();
+  makeNavFixed(); // Make navigation fixed
 });
+
+// Enhanced translation function
+function applyTranslations(){
+  const lang = getLang();
+  
+  // Translate all static elements
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const txt = t[lang]?.[key] || t["en"][key] || el.textContent;
+    el.textContent = txt;
+  });
+  
+  // Update cart items names if they exist
+  updateCartItemTranslations(lang);
+}
+
+function updateCartItemTranslations(lang) {
+  const cart = getCart();
+  cart.forEach(item => {
+    // If item has a translation key, update it
+    if (item.translationKey) {
+      item.name = t[lang]?.[item.translationKey] || t["en"][item.translationKey] || item.name;
+    }
+  });
+  saveCart(cart);
+  renderCart();
+}
